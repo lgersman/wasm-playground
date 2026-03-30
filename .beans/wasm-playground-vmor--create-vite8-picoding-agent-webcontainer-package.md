@@ -5,7 +5,7 @@ status: todo
 type: feature
 priority: normal
 created_at: 2026-03-30T13:54:52Z
-updated_at: 2026-03-30T15:03:26Z
+updated_at: 2026-03-30T16:50:32Z
 ---
 
 Create a new sub-package 'vite8-picoding-agent-webcontainer' based on vite8-webcontainer-demo.
@@ -18,7 +18,7 @@ Steps:
 - [ ] Copy packages/vite8-webcontainer-demo to packages/vite8-picoding-agent-webcontainer
 - [ ] Rename package in package.json to @wasm-playground/vite8-picoding-agent-webcontainer
 - [ ] Modify App.tsx to wrap everything in a horizontal ResizablePanelGroup
-- [ ] Left panel: new WebContainer + XtermTerminal (agent terminal)
+- [ ] Left panel: new WebContainer + XtermTerminal (agent terminal) connected to the webcontainer, with the pi agent started automatically after boot
 - [ ] Right panel: the existing editor + preview + terminal layout from vite8-webcontainer-demo
 
 ## Agent Terminal Details
