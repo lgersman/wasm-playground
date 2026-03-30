@@ -21,6 +21,7 @@ export default function EditorPanel({ webcontainer, fileChangeCounter, changedFi
   const [editorRefreshKey, setEditorRefreshKey] = useState(0);
   const selectedFileRef = useRef<string | null>(null);
   selectedFileRef.current = selectedFile;
+  const userSavedContentRef = useRef<string | null>(null);
 
   const refreshFiles = async (wc: WebContainer) => {
     const list = (await listAllFiles(wc)).sort();
@@ -52,7 +53,10 @@ export default function EditorPanel({ webcontainer, fileChangeCounter, changedFi
       if (normalized === selectedFileRef.current) {
         webcontainer.fs.readFile("/" + normalized, "utf-8").then((content) => {
           setFileContent(content);
-          setEditorRefreshKey((k) => k + 1);
+          if (content !== userSavedContentRef.current) {
+            setEditorRefreshKey((k) => k + 1);
+          }
+          userSavedContentRef.current = null;
         }).catch(() => {});
       }
     }
@@ -64,6 +68,7 @@ export default function EditorPanel({ webcontainer, fileChangeCounter, changedFi
 
   const handleSave = async (content: string) => {
     if (!webcontainer || !selectedFile) return;
+    userSavedContentRef.current = content;
     await saveFile(webcontainer, selectedFile, content);
   };
 

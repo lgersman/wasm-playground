@@ -2,3 +2,4 @@ node_modules
 .claude/commands
 .claude/skills
 dist
+packages/vite8-picoding-agent-webcontainer/demo/pi-agent

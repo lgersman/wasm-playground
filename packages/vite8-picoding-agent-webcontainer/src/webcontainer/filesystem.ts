@@ -3,7 +3,7 @@ import type { WebContainer, FileSystemTree } from "@webcontainer/api";
 // Load all demo project files as raw strings at build time.
 // The demo/ directory is excluded from TypeScript compilation (tsconfig include: ["src"])
 // and is not built as JS — only inlined as strings here via ?raw.
-const demoFiles = import.meta.glob("../../demo/**/*", {
+const demoFiles = import.meta.glob(["../../demo/**/*", "../../demo/.*", "../../demo/.pi/**/*"], {
   query: "?raw",
   eager: true,
   import: "default",
@@ -55,7 +55,7 @@ async function readAllFiles(
 
     if (entry.isFile()) {
       result[relPath] = await webcontainer.fs.readFile(absPath, "utf-8");
-    } else if (entry.isDirectory()) {
+    } else if (entry.isDirectory() && entry.name !== "node_modules" && entry.name !== "pi-agent" && entry.name !== "dist" && entry.name !== ".pi") {
       Object.assign(result, await readAllFiles(webcontainer, absPath));
     }
   }
@@ -74,9 +74,9 @@ export async function listAllFiles(
     const absPath = absDir === "/" ? `/${entry.name}` : `${absDir}/${entry.name}`;
     const relPath = absPath.replace(/^\//, "");
 
-    if (entry.isFile()) {
+    if (entry.isFile() && !entry.name.startsWith(".")) {
       result.push(relPath);
-    } else if (entry.isDirectory() && entry.name !== "node_modules" && entry.name !== "pi-agent" && entry.name !== "dist") {
+    } else if (entry.isDirectory() && entry.name !== "node_modules" && entry.name !== "pi-agent" && entry.name !== "dist" && entry.name !== ".pi") {
       result.push(...(await listAllFiles(webcontainer, absPath)));
     }
   }

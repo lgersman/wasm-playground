@@ -75,7 +75,7 @@ export default function CodeMirrorEditor({ filePath, content, onSave, onNew, onD
           langFor(filePath),
           oneDark,
           EditorView.lineWrapping,
-          EditorView.theme({ "&": { height: "100%" }, ".cm-scroller": { overflow: "auto" } }),
+          EditorView.theme({ "&": { height: "100%" }, ".cm-scroller": { overflow: "auto", fontFamily: "JetBrainsMonoNerdFont, monospace", fontSize: "14px" } }),
         ],
       }),
       parent: containerRef.current,
@@ -107,7 +107,7 @@ export default function CodeMirrorEditor({ filePath, content, onSave, onNew, onD
           flexShrink: 0,
         }}
       >
-        <span style={{ color: "#abb2bf", fontSize: "12px", flex: 1, fontFamily: "monospace" }}>
+        <span style={{ color: "#abb2bf", fontSize: "12px", flex: 1, fontFamily: "JetBrainsMonoNerdFont, monospace" }}>
           {filePath}
         </span>
         <button
