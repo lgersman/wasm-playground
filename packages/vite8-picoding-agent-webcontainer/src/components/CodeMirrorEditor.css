@@ -1,0 +1,22 @@
+.cm-scroller {
+  scrollbar-width: thin;
+  scrollbar-color: #4f5666 transparent;
+}
+
+.cm-scroller::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.cm-scroller::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cm-scroller::-webkit-scrollbar-thumb {
+  background: #4f5666;
+  border-radius: 4px;
+}
+
+.cm-scroller::-webkit-scrollbar-thumb:hover {
+  background: #828997;
+}

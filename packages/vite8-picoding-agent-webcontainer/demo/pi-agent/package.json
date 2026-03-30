@@ -1,0 +1,8 @@
+{
+  "name": "pi-agent",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@mariozechner/pi-coding-agent": "latest"
+  }
+}
