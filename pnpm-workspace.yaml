@@ -1,0 +1,6 @@
+packages:
+  - packages/*
+allowBuilds:
+  better-sqlite3: true
+  node-llama-cpp: true
+  "@homebridge/node-pty-prebuilt-multiarch": true
