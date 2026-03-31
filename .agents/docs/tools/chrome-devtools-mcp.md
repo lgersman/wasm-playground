@@ -11,7 +11,7 @@ Configured in `.mcp.json`:
   "mcpServers": {
     "chrome-devtools": {
       "command": "npx",
-      "args": ["-y", "chrome-devtools-mcp@latest"]
+      "args": ["-y", "chrome-devtools-mcp@latest", "--auto-connect", "--no-usage-statistics"]
     }
   }
 }
@@ -76,6 +76,7 @@ Configured in `.mcp.json`:
 
 | Flag | Description |
 |---|---|
+| `--auto-connect` | Automatically discover and connect to running Chrome instances |
 | `--browserUrl <url>` | Connect to an existing Chrome instance (e.g. `http://127.0.0.1:9222`) |
 | `--wsEndpoint <url>` | Connect via WebSocket endpoint |
 | `--headless` | Run Chrome without a UI |
