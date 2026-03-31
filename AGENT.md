@@ -12,6 +12,10 @@
 
 <!-- Add project-specific guidelines and conventions here -->
 
+## Agent Rules
+
+- **Never commit or stage files without explicit user instruction.** Always wait for the user to ask before running `git add`, `git commit`, or any equivalent operation.
+
 ## Agent Infrastructure
 
 This project uses a structured agent infrastructure in `.agents/`:
