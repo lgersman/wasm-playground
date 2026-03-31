@@ -1,11 +1,11 @@
 ---
 # wasm-playground-dhcp
 title: Strip WebContainer from agent panel — bundle pi agent with Vite
-status: draft
+status: scrapped
 type: feature
 priority: normal
 created_at: 2026-03-31T05:48:41Z
-updated_at: 2026-03-31T05:50:17Z
+updated_at: 2026-03-31T09:48:25Z
 blocking:
     - wasm-playground-vmor
 ---
@@ -78,3 +78,7 @@ If we can import the SDK directly in Vite and wire its tools to the **existing**
 - Simpler code: one WebContainer instance, cleaner component tree
 - Vite-bundled: pi agent code is tree-shaken, type-checked, and versioned alongside the app
 - Enables future: agent could run in a Web Worker for true parallelism
+
+## Reasons for Scrapping
+
+Implementation too complex.
