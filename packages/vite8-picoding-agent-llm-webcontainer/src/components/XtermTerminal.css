@@ -1,0 +1,21 @@
+.xterm-viewport {
+  scrollbar-width: thin;
+  scrollbar-color: #4f5666 transparent;
+}
+
+.xterm-viewport::-webkit-scrollbar {
+  width: 8px;
+}
+
+.xterm-viewport::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.xterm-viewport::-webkit-scrollbar-thumb {
+  background: #4f5666;
+  border-radius: 4px;
+}
+
+.xterm-viewport::-webkit-scrollbar-thumb:hover {
+  background: #828997;
+}
